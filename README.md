@@ -1,7 +1,7 @@
 # vim-horizon
 Use the statusline to view one more line.
 
-# Usage
+## Usage
 `:set statusline=%{horizon#broaden()}` to use the statusline to view the coming next line!
 
 ## Installation
