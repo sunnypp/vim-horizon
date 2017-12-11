@@ -14,3 +14,14 @@ Use the statusline to view one more line.
 
     cd ~/.vim/bundle
     git clone git://github.com/sunnypp/vim-horizon.git
+
+## Features
+
+### Smart converting ^I to tab character with the width of tabstop
+With the help of `repeat(' ', &tabstop)`
+
+### Smart indentation relative to number settings (numberwidth, nonumber)
+By `repeat(' ', &numberwidth * &number)`
+
+### Returning a string without disturbing the theme
+So feel free to just add `%{horizon#broaden()}` to, like, [vim-airline](https://github.com/vim-airline/vim-airline).
