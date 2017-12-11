@@ -5,11 +5,16 @@
 " Source : https://github.com/sunnypp/vim-horizon
 
 " Do this only once to any buffer
-if ( exists("broadened_horizon") )
-    finish
+if ( exists("b:broadened_horizon") )
+    " finish
 endif
-let broadened_horizon = 1
+let b:broadened_horizon = 1
 
 function! horizon#broaden()
-    return getbufline(bufnr('%'),line("w$")+1)[0]
+    if ( line("w$") < line('$') )
+        let s:line = getbufline(bufnr('%'),line("w$")+1)[0]
+        let s:line = substitute( s:line, '\v\t', repeat(' ', &tabstop), 'g' )
+        return repeat(' ', &numberwidth * &number) . s:line
+    endif
+    return ''
 endfunction
