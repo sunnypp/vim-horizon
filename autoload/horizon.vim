@@ -10,6 +10,6 @@ if ( exists("broadened_horizon") )
 endif
 let broadened_horizon = 1
 
-function Horizon()
+function! horizon#broaden()
     return getbufline(bufnr('%'),line("w$")+1)[0]
 endfunction
